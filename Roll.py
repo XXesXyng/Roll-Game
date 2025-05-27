@@ -41,4 +41,4 @@ async def roll_dice(ctx):
 
 # 디스코드 봇 토큰으로 실행
 if __name__ == "__main__":
-bot.run(TOKEN)
+    bot.run(TOKEN)
