@@ -40,4 +40,5 @@ async def roll_dice(ctx):
         await ctx.send(embed=embed)
 
 # 디스코드 봇 토큰으로 실행
+if __name__ == "__main__":
 bot.run(TOKEN)
