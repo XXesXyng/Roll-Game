@@ -10,6 +10,7 @@ TOKEN = os.getenv("TOKEN")
 
 
 intents = discord.Intents.default()
+intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # 주사위 이미지가 저장된 폴더
@@ -32,7 +33,7 @@ async def roll_dice(ctx):
 
     if os.path.exists(image_path):
         file = discord.File(image_path, filename="dice.png")
-        embed.set_image(url="attachment://dice.png")
+        embed.set_thumbnail(url="attachment://dice.png")
         await ctx.send(embed=embed, file=file)
     else:
         embed.add_field(name="⚠️ 이미지 없음", value="주사위 이미지 파일을 찾을 수 없습니다.")
