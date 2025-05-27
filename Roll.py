@@ -16,9 +16,14 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 # 주사위 이미지가 저장된 폴더
 DICE_IMAGE_DIR = "dice_images"
 
+started = False
+
 @bot.event
 async def on_ready():
-    print(f"✅ 봇 로그인됨: {bot.user}")
+    global started
+    if not started:
+        print(f"✅ 봇 로그인됨: {bot.user}")
+        started = True
 
 @bot.command(name="주사위")
 async def roll_dice(ctx):
